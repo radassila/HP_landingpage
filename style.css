@@ -1,0 +1,191 @@
+/* =========================================
+   VARIÁVEIS DE COR
+   ========================================= */
+:root {
+  --vermelho: #641e1e;
+  --dourado: #c39a1c;
+  --marrom: #160b02;
+  --cinza: #717679;
+  --branco: #efeee9;
+}
+/* =========================================
+   RESET BÁSICO
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+
+}
+body {
+  font-family: 'Segoe UI', Verdana, sans-serif;
+  background-color: var(--branco);
+  color: var(--marrom);
+  line-height: 1.6;
+}
+
+/* =========================================
+   CABEÇALHO E NAVBAR
+   ========================================= */
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--marrom);
+  color: var(--branco);
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+}
+
+#logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--dourado);
+  text-decoration: none;
+  margin-right: 12rem;
+}
+
+.lista-nav {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.lista-nav a {
+  color: var(--branco);
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid transparent;
+}
+
+.lista-nav a:hover,
+.lista-nav a:focus {
+  color: var(--dourado);
+  border-bottom-color: var(--dourado);
+}
+
+/* estado ativo, controlado pelo script.js conforme o usuário rola a página */
+.lista-nav a.ativo {
+  color: var(--dourado);
+  border-bottom-color: var(--dourado);
+}
+
+/* =========================================
+   HERO (introdução da landing page)
+   ========================================= */
+#hero {
+  text-align: center;
+  padding: 13rem 1.5rem;
+  background-color: var(--vermelho);
+  color: var(--branco);
+  background-image: url("img/mapa.jpeg");
+}
+#hero h1 {
+  font-size: 3rem;
+  color: var(--dourado);
+  margin-bottom: 0.75rem;
+  text-shadow: 2px 5px 10px #000000;
+}
+#hero p {
+  max-width: 600px;
+  margin: 0 auto;
+}
+/* =========================================
+   SEÇÕES DOS FILMES
+   ========================================= */
+.filme {
+  padding: 3rem 1.5rem;
+  border-bottom: 1px solid var(--cinza);
+}
+
+/* alterna a cor de fundo entre as sections para diferenciar cada filme */
+.filme:nth-of-type(even) {
+  background-color: #e4e2d8;
+}
+
+.filme-conteudo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto 1.5rem auto;
+  align-items: flex-start;
+}
+
+.capa {
+  width: 220px;
+  height: auto;
+  border: 3px solid var(--dourado);
+  border-radius: 4px;
+}
+
+.filme-texto {
+  flex: 1;
+  min-width: 250px;
+}
+
+.filme-texto h2 {
+  color: var(--vermelho);
+  margin-bottom: 0.75rem;
+}
+
+.resumo {
+  color: var(--cinza);
+}
+
+/* =========================================
+   TRAILER (iframe do YouTube)
+   ========================================= */
+.trailer {
+  max-width: 900px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9; /* mantém a proporção do vídeo em qualquer tamanho de tela */
+}
+
+.trailer iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 4px;
+}
+
+/* =========================================
+   RODAPÉ
+   ========================================= */
+.rodape {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: var(--vermelho);
+  color: var(--branco);
+}
+
+.btn-topo {
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--dourado);
+  color: var(--vermelho);
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-topo:hover {
+  opacity: 0.85;
+}
+
+/* =========================================
+   RESPONSIVO
+   ========================================= */
+@media (max-width: 600px) {
+  .filme-conteudo {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
